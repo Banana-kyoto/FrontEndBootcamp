@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css"
 </head>
 <body>
-    <h1>To do list</h1>
-    <input type="text" name="" id="todo">
-      <div id="results"></div>
-    <button onclick="addElements()">Add Elements</button>
-    <script>
+    <div class="container">
+    <center><h1>To do list</h1></center>
+
+    <div class="input-container"> </div>
+        <input type="text" name="" id="todo" placeholder="รายการสิ่งที่ต้องทำ...">
+        <button onclick="addElements()">เพิ่มงานใหม่</button>
+    </div>
+    
+    <div id="results"> </div>
+   
+   <script>
         function addElements(){
-            let inp = document.getElementById("todo").value
+            let inp = document.getElementById("todo").value;
+            let container = document.createElement("div");
             let newElement = document.createElement("p");
             newElement.innerHTML = inp;
-            let result = document.getElementById("results")
-            result.appendChild(newElement);
+            
+        
+            let deleteButton = document.createElement("button");
+            deleteButton.innerHTML = "Delete";
+            deleteButton.onclick = function(){
+                container.remove();
+            }
+
+            container.appendChild(newElement);
+            container.appendChild(deleteButton)
+
+            let result = document.getElementById("results");
+            result.appendChild(container);          
         }
-
     </script>
-
-
 
 </body>
 </html>
