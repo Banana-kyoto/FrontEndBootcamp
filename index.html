@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-    <center><h1>To do list</h1></center>
-
-    <div class="input-container"> </div>
+    <h1>To do list</h1>
+    
+    <div class="input-container"> 
         <input type="text" name="" id="todo" placeholder="รายการสิ่งที่ต้องทำ...">
-        <button onclick="addElements()">เพิ่มงานใหม่</button>
+        <button onclick="addElements()">เพิ่ม</button>
     </div>
     
     <div id="results"> </div>
@@ -27,6 +27,7 @@
         
             let deleteButton = document.createElement("button");
             deleteButton.innerHTML = "Delete";
+            deleteButton.classList.add("delete-btn")
             deleteButton.onclick = function(){
                 container.remove();
             }
